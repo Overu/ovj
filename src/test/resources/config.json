@@ -1,0 +1,8 @@
+{
+	"hk2_binder": "com.overu.vertx.jersey.IntegrationBinder",
+    "host": "localhost",
+    "port": 8080,
+    "base_path": "/rest",
+    "resources": ["com.overu.vertx.jersey.resources"],
+    "features": ["org.glassfish.jersey.jackson.JacksonFeature"]
+}

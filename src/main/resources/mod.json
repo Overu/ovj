@@ -1,0 +1,10 @@
+{
+  "main":"com.englishtown.vertx.jersey.JerseyModule",
+  "includes": "com.englishtown~vertx-mod-jersey~2.5.0-SNAPSHOT",
+  "description":"Jersey by Vertx Impl",
+  "licenses": ["The Apache Software License Version 2.0"],
+  "author": "Overu",
+  "developers": ["Overu"],
+  "keywords": ["jersey", "hk2", "vertx"],
+  "homepage": "url to your project page"
+}
