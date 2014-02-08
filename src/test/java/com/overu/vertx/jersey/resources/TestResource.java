@@ -16,13 +16,20 @@
 
 package com.overu.vertx.jersey.resources;
 
+import org.elasticsearch.client.Client;
 import org.glassfish.jersey.server.ChunkedOutput;
 import org.glassfish.jersey.server.JSONP;
 import org.vertx.java.core.Handler;
 import org.vertx.java.core.Vertx;
+import org.vertx.java.core.json.JsonObject;
+import org.vertx.java.platform.Container;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
+
+import javax.inject.Inject;
+import javax.inject.Provider;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -44,7 +51,6 @@ public class TestResource {
   @Path("chunked")
   @Produces(MediaType.TEXT_PLAIN)
   public void getChunked(@Suspended final AsyncResponse response, @Context final Vertx vertx) {
-
     vertx.runOnContext(new Handler<Void>() {
       @Override
       public void handle(Void aVoid) {
@@ -94,7 +100,7 @@ public class TestResource {
   @Path("json")
   @Produces({ MediaType.APPLICATION_JSON, "application/javascript" })
   public String getJson() {
-    return "{}";
+    return "{'a': 'b'}";
   }
 
   // @POST

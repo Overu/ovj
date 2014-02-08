@@ -95,6 +95,13 @@
       <scope>provided</scope>
     </dependency>
 
+    <!-- ElasticSearch -->
+    <dependency>
+      <groupId>org.elasticsearch</groupId>
+      <artifactId>elasticsearch</artifactId>
+      <version>0.90.10</version>
+    </dependency>
+
     <!-- jersey JacksonFeature -->
     <dependency>
       <groupId>org.glassfish.jersey.media</groupId>
@@ -111,7 +118,7 @@
         </exclusion>
       </exclusions>
     </dependency>
-    
+
     <!--Test dependencies -->
     <dependency>
       <groupId>junit</groupId>

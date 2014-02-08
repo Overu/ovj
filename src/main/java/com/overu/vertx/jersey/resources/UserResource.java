@@ -13,7 +13,7 @@ public class UserResource {
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   public User getUser() {
-    return new User("zhang", 11);
+    return new User("zhang1", 11);
   }
 
 }
