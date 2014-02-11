@@ -1,5 +1,6 @@
 {
   "main":"com.overu.vertx.jersey.OJerseyVerticle",
+  "auto-redeploy": true,
   "includes": "com.englishtown~vertx-mod-jersey~2.5.0-SNAPSHOT",
   "description":"Jersey by Vertx Impl",
   "licenses": ["The Apache Software License Version 2.0"],

@@ -1,8 +1,6 @@
 package com.overu.vertx.jersey.utils;
 
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.elasticsearch.action.admin.cluster.node.info.NodeInfo;
@@ -12,11 +10,8 @@ import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
-import org.elasticsearch.search.facet.terms.TermsFacet.Entry;
 import org.vertx.java.core.json.JsonObject;
 import org.vertx.java.platform.Container;
-
-import java.io.IOException;
 import java.util.Map;
 
 public class ClientProvider {

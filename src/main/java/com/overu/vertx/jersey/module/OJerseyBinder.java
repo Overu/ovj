@@ -3,17 +3,10 @@ package com.overu.vertx.jersey.module;
 import com.englishtown.vertx.jersey.inject.VertxJerseyBinder;
 import com.overu.vertx.jersey.utils.ClientProvider;
 
-import org.elasticsearch.client.Client;
-import org.elasticsearch.client.transport.TransportClient;
-import org.elasticsearch.common.transport.InetSocketTransportAddress;
-import org.glassfish.hk2.api.Factory;
-import org.glassfish.hk2.api.TypeLiteral;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
-import org.vertx.java.core.json.JsonObject;
 import org.vertx.java.platform.Container;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 public class OJerseyBinder extends AbstractBinder {
 
@@ -52,5 +45,14 @@ public class OJerseyBinder extends AbstractBinder {
     ClientProvider.getProvider().setContainer(container);
     // bind(ESClientFactory.class).to(new TypeLiteral<Client>() {
     // }).in(Singleton.class);
+
+    Runtime.getRuntime().addShutdownHook(new Thread() {
+
+      @Override
+      public void run() {
+        ClientProvider.getProvider().close();
+      }
+
+    });
   }
 }

@@ -10,17 +10,20 @@ public class User implements Serializable {
   private static String[] types = new String[] { "type1", "type2", "type3", "type4", "type5", "type6", "type7" };
 
   private long id;
-  private int subid;
   private String name;
+  private String pinyin;
   private String type;
 
   public User() {
-    Random r = new Random();
+    this("谢逗逗", "xiedoudou");
+  }
 
+  public User(String name, String pinyin) {
+    Random r = new Random();
     setId(r.nextLong());
-    setSubid(r.nextInt());
-    setName(getSubid() % 2 == 0 ? "ou" : "xie");
-    setType(types[Math.abs(getSubid() % 7)]);
+    setType(types[Math.abs((int) getId() % 7)]);
+    setName(name);
+    setPinyin(pinyin);
   }
 
   /**
@@ -38,10 +41,10 @@ public class User implements Serializable {
   }
 
   /**
-   * @return the subid
+   * @return the pinyin
    */
-  public int getSubid() {
-    return subid;
+  public String getPinyin() {
+    return pinyin;
   }
 
   /**
@@ -66,10 +69,10 @@ public class User implements Serializable {
   }
 
   /**
-   * @param subid the subid to set
+   * @param pinyin the pinyin to set
    */
-  public void setSubid(int subid) {
-    this.subid = subid;
+  public void setPinyin(String pinyin) {
+    this.pinyin = pinyin;
   }
 
   /**
